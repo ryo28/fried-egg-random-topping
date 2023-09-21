@@ -21,12 +21,14 @@ export default function Home() {
         </div>
         <div className="flex justify-center">
           <div className="absolute bottom-1/4 xs:bottom-12">
-            <Link className="bg-orange-600 p-5 text-2xl hover:bg-orange-800 xs:p-2" href="/gacha">
+            <Link
+              className="bg-orange-600 p-5 text-2xl hover:bg-orange-800 xs:p-2"
+              href="/gacha"
+            >
               トッピングガチャを引く
             </Link>
           </div>
         </div>
-       
       </div>
     </>
   );
