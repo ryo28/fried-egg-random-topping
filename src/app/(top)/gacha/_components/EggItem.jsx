@@ -1,10 +1,11 @@
 "use client";
+
 import { useEffect, useRef, useState } from "react";
 import { useRouter } from "next/navigation";
 import Image from "next/image";
 import gsap from "gsap";
 import MotionPathPlugin from "gsap/MotionPathPlugin";
-import egg from "/public/egg.png";
+import egg from "/public/egg.webp";
 
 gsap.registerPlugin(MotionPathPlugin); // MotionPathPluginを登録
 
@@ -42,8 +43,10 @@ export function EggItem({ state }) {
 
   useEffect(() => {
     if (animationComplete) {
-      // ガチャ結果ページを作成する
+      // ガチャ結果ページをランダムに作成する
       router.push("/gacha/gachaResults");
+      let number = Math.floor(Math.random() * 5);
+      sessionStorage.setItem("results", number);
     }
   }, [animationComplete, router]);
 
