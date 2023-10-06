@@ -3,8 +3,8 @@
 import Image from "next/image";
 import { useState } from "react";
 import { IconTriangleInverted } from "@tabler/icons-react";
-import eggButton02 from "/public/eggButton02.png";
-import eggButton03 from "/public/eggButton03.png";
+import eggButtonYolk from "/public/eggButton01.webp";
+import eggButtonWhite from "/public/eggButton02.webp";
 
 export function EggButton({ state }) {
   const [eggButtonToggle, setEggButtonToggle] = useState(false);
@@ -16,7 +16,6 @@ export function EggButton({ state }) {
     // 1秒ごとにステートをトグルするためのタイマーを設定
     setTimeout(() => {
       setEggButtonToggle((prevEggButtonToggle) => !prevEggButtonToggle);
-
       setTimeout(() => {
         setEggToggle(!eggToggle);
         state(true);
@@ -26,33 +25,27 @@ export function EggButton({ state }) {
 
   return (
     <>
-      <div className="absolute bottom-56 z-50 flex animate-bounce flex-col items-center text-red-500 xs:bottom-32 select-none">
+      <div className="absolute bottom-56 flex animate-bounce select-none flex-col items-center text-red-500 xs:bottom-32">
         目玉焼きをタップ
         <IconTriangleInverted stroke={1} />
       </div>
-
+      {/* buttonを大きくして下に画像を配置し、スマホの長押しでの画像取得を無効化している */}
       <button
-        className="absolute bottom-36 z-10 h-24 w-40 xs:bottom-12 select-none outline-none"
+        className="absolute bottom-28 z-10 h-40 w-44 outline-none xs:bottom-12"
         onClick={eggButton}
       ></button>
       <Image
-        className={`absolute bottom-28 h-40 w-40 duration-300 xs:bottom-6 select-none ${
+        className={`absolute bottom-28 h-40 w-40 duration-300 xs:bottom-6 ${
           eggButtonToggle ? "translate-y-2" : "translate-y-0"
         }`}
-        src={eggButton02}
-        alt=""
+        src={eggButtonYolk}
+        alt="Yolk"
       />
       <Image
-        className="absolute bottom-28 h-40 w-40 xs:bottom-6 select-none"
-        src={eggButton03}
-        alt=""
+        className="absolute bottom-28 h-40 w-40 xs:bottom-6"
+        src={eggButtonWhite}
+        alt="White"
       />
-
-      <div
-        className={`absolute animate-turn duration-700 ease-in ${
-          eggToggle ? "-translate-x-56 translate-y-16" : ""
-        }`}
-      ></div>
     </>
   );
 }
