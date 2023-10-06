@@ -2,10 +2,10 @@
 
 import { useState } from "react";
 import Image from "next/image";
-import { EggButton } from "./components/EggButton";
-import { EggItem } from "./components/EggItem";
-import background from "/public/background.png";
-import chicken from "/public/chicken.png";
+import { EggButton } from "./_components/EggButton";
+import { EggItem } from "./_components/EggItem";
+import background from "/public/background.webp";
+import chicken from "/public/chicken.webp";
 
 export default function Gacha() {
   const [eggSwitch, setEggSwitch] = useState(false);

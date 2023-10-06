@@ -1,7 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
-import topSmall from "../../../public/topImageSmall.png";
-import topBig from "../../../public/topImageBig.png";
+import topSmall from "/public/topImageSmall.webp";
+import topBig from "/public/topImageBig.webp";
 
 export default function Home() {
   return (
