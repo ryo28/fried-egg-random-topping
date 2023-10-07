@@ -51,7 +51,7 @@ export function EggItem({ state }) {
       let number = Math.floor(Math.random() * count);
       sessionStorage.setItem("results", number);
     }
-  }, [animationComplete, router]);
+  }, [animationComplete, router, count]);
 
   return <Image ref={animatedImageRef} src={egg} alt="Animated Image" />;
 }
