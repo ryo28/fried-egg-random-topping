@@ -4,10 +4,14 @@ import Image from "next/image";
 import Link from "next/link";
 import { gachaResultsSource } from "./gachaResultsSource";
 import memo from "/public/memo.webp";
+import { useEffect, useState } from "react";
 
 export default function GachaResults() {
-  let resultStorage = sessionStorage.getItem("results");
-  const resultsItem = gachaResultsSource[resultStorage];
+  const [resultsItem, setResultsItem] = useState("");
+  useEffect(() => {
+    let resultStorage = sessionStorage.getItem("results");
+    setResultsItem(gachaResultsSource[resultStorage]);
+  }, []);
 
   return (
     <div className="items-center justify-center xs:flex xs:pt-10">
