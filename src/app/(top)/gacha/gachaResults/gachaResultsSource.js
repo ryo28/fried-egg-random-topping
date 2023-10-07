@@ -4,7 +4,7 @@ import pepper from "/public/friedEggItems/friedEggItem03.webp";
 import soySauce from "/public/friedEggItems/friedEggItem04.webp";
 import mayonnaise from "/public/friedEggItems/friedEggItem05.webp";
 
-export const gachaResultsSource  = [
+export const gachaResultsSource = [
   {
     id: 1,
     img: sauce,
