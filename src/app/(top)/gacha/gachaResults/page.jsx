@@ -2,12 +2,12 @@
 
 import Image from "next/image";
 import Link from "next/link";
-import { results } from "./resultsArray";
+import { gachaResultsSource } from "./gachaResultsSource";
 import memo from "/public/memo.webp";
 
 export default function GachaResults() {
   let resultStorage = sessionStorage.getItem("results");
-  const resultsItem = results[resultStorage];
+  const resultsItem = gachaResultsSource[resultStorage];
 
   return (
     <div className="items-center justify-center xs:flex xs:pt-10">
