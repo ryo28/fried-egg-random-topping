@@ -5,9 +5,11 @@ module.exports = {
     extend: {
       colors: {
         LightYellow: "#FDD378",
+        LightOrange: "#EFB115",
       },
       screens: {
         xs: "500px",
+        xxs: "375px",
       },
     },
   },
