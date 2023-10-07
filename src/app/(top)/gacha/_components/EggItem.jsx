@@ -3,6 +3,7 @@
 import { useEffect, useRef, useState } from "react";
 import { useRouter } from "next/navigation";
 import Image from "next/image";
+import { gachaResultsSource } from "../gachaResults/gachaResultsSource";
 import gsap from "gsap";
 import MotionPathPlugin from "gsap/MotionPathPlugin";
 import egg from "/public/egg.webp";
@@ -13,6 +14,8 @@ export function EggItem({ state }) {
   const [animationComplete, setAnimationComplete] = useState(false);
   const animatedImageRef = useRef(null);
   const router = useRouter();
+  // 配列に要素を追加する度に乱数を記述し直すのは手間なので、配列の数を取得して利用することにしました
+  const count = gachaResultsSource.length;
   useEffect(() => {
     const animatedImage = animatedImageRef.current;
     if (state === true) {
@@ -45,7 +48,7 @@ export function EggItem({ state }) {
     if (animationComplete) {
       // ガチャ結果ページをランダムに作成する
       router.push("/gacha/gachaResults");
-      let number = Math.floor(Math.random() * 5);
+      let number = Math.floor(Math.random() * count);
       sessionStorage.setItem("results", number);
     }
   }, [animationComplete, router]);
